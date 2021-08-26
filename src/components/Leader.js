@@ -46,7 +46,10 @@ const Leader = () => {
 return(
     <Box m={3}>
     <Homebar />
-    
+    <center>
+
+             <Typography variant='h5' style={{color:"textSecondary"}} >Leader Page</Typography>
+              </center>
     <br></br>
     <br></br>
     <Box m={3}>

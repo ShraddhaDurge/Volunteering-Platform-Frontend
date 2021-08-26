@@ -63,12 +63,13 @@ const PastEvents = (props) => {
     return(
         <Box>
             <Homebar/>
-            
+
 
             <Box align="center">
             <center>
-            <Typography variant='h5' style={{color:"#2E2EFE"}} >Past Events</Typography>
-            </center>
+
+                     <Typography variant='h5' style={{color:"textSecondary"}} >Past Events</Typography>
+                    </center>
       </Box>
 
             <Box m={5}>
@@ -80,7 +81,7 @@ const PastEvents = (props) => {
                                     <Grid container spacing={5}>
                                         <Grid item xs={6} style={gridStyle}>
                                             <Tooltip title={post.name}>
-                                                <img src={wkndevnt1} height='100%' width='100%' alt="Old Age Home" />
+                                                  <img src={`data:image/png;base64,${post.image}`} height='200px' width='270px' alt="Old Age Home" />
                                             </Tooltip>
                                         </Grid>
                                         <Grid item xs={6} style={gridStyle}>
@@ -88,14 +89,14 @@ const PastEvents = (props) => {
                                                 <br></br>
                                                 <b>{post.name}</b>
                                                 <br></br>
-                                                Venue: {post.venue}
+                                                <b>Venue:</b> {post.venue}
                                                 <br></br>
-                                                Date: {moment(post.start_time).format('MMMM Do YYYY')}
+                                                <b>Date:</b> {moment(post.start_time).format('MMMM Do YYYY')}
                                                 <br></br>
-                                                About: {post.description}
+                                                <b>About:</b> {post.description}
                                                 <br></br>
                                             </p>
-                                            
+
                                         </Grid>
                                     </Grid>
                                 </CardContent>
@@ -104,7 +105,7 @@ const PastEvents = (props) => {
                     ))}
                 </Grid>
                <br></br>
-                
+
             </Box>
             <Footer/>
         </Box>

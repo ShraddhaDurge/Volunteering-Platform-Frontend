@@ -1,7 +1,7 @@
 import {React,useState,Fragment} from 'react';
  import { useHistory } from 'react-router-dom';
 import { Grid, Paper, Typography, TextField, Button,makeStyles, Box, Card, CardContent, Link } from '@material-ui/core';
-import logo from './logo.jpg';
+import logo from './logobg.png';
 import { Form, Formik, ErrorMessage, Field } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
@@ -190,11 +190,11 @@ const Register = () => {
         
         <Box  >
         
-    <Box mt={1} mb={3} align="center">
+    <Box align="center">
         <img src={logo} alt="logo" width='200' height='150'/>
     </Box>
     
-    <Box  ml={40} mr={40} mt={4} align='center' >
+    <Box  ml={33}  mr={30} align='center' >
         <Grid container  spacing={3} align="center">
             <Grid item xs={12} sm={6} md={6}>
                 <Card style={{minwidth:200}} className={classes.grid}>

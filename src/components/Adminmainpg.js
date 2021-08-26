@@ -16,8 +16,7 @@ import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, R
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import PropTypes from 'prop-types';
 import axios from 'axios';
-import Addevents from './Addevents';
-// import Pastupload from "./Pastupload";
+import Pastupload from "./Pastupload";
 
 const useStyles = makeStyles({
   root: {
@@ -102,7 +101,7 @@ function ConfirmationDialogRaw(props) {
 
   return (
     <Dialog
-      maxWidth="xs"
+      fullWidth={true}
       onEntering={handleEntering}
       aria-labelledby="confirmation-dialog-title"
       open={open}
@@ -143,11 +142,11 @@ ConfirmationDialogRaw.propTypes = {
 
 
 export default function Adminpg() {
-
+  let history = useHistory();
   const classes = useStyles();
 
   const [open, setOpen] = React.useState(false);
-  const [past, setPast] = React.useState(false);
+  const [past, setPast] = React.useState({isOp:false});
 
   const handleDialogue = () => {
     setOpen(true);
@@ -156,14 +155,19 @@ export default function Adminpg() {
     setOpen(false);
   };
   const pastDialogue = () => {
-    setPast(true);
+    setPast({
+      isOp:true
+
+  })
 
   };
 
-  let history = useHistory();
+
+
+
 
   return (
-
+    <div>
     <Box m={3}>
       <ConfirmationDialogRaw
         classes={{
@@ -175,16 +179,24 @@ export default function Adminpg() {
         onClose={handleClose}
 
       />
+      <Pastupload past={past}
+              setPast={setPast}/>
       <Homebar />
-      
+      <center>
+
+               <Typography variant='h5' style={{color:"textSecondary"}} >Admin Page</Typography>
+      </center>
+      {/* <Box mt={1} mb={3} align="center">
+        <img src={logo} alt="logo" width='200' height='150' />
+      </Box> */}
       <br></br>
       <br></br>
       <Box m={3}>
-        
+
         <Grid container spacing={8} className={classes.grid}>
           <Grid item xs={12} sm={6} md={4} className={classes.root}>
             <Card className={classes.card}>
-            <CardActionArea onClick={()=>{history.push('/Addevents');}}>
+            <CardActionArea onClick={()=>{history.push("/Addevents");}}>
               <CardContent>
 
                 <ListItem alignItems='center'>
@@ -197,13 +209,13 @@ export default function Adminpg() {
                 </ListItem>
 
               </CardContent>
-              </CardActionArea>
+              </CardActionArea >
             </Card>
 
           </Grid>
           <Grid item xs={12} sm={6} md={4} className={classes.root}>
             <Card className={classes.card}>
-            <CardActionArea onClick={()=>{history.push('/Editevents');}}>
+            <CardActionArea onClick={()=>{history.push("/Editevents");}}>
               <CardContent>
 
                 <ListItem alignItems='center'>
@@ -216,12 +228,12 @@ export default function Adminpg() {
                 </ListItem>
 
               </CardContent>
-              </CardActionArea>
+              </CardActionArea >
             </Card>
           </Grid>
           <Grid item xs={12} sm={6} md={4} className={classes.root}>
             <Card className={classes.card} >
-            <CardActionArea onClick={()=>{history.push('/Pastupload');}}>
+            <CardActionArea onClick={pastDialogue}>
               <CardContent>
 
                 <ListItem alignItems='center'>
@@ -263,14 +275,17 @@ export default function Adminpg() {
         <br></br>
         <br></br>
         <br></br>
+        <br></br>
+        <br></br>
         {/* <Grid align="right">
                     <Button className={classes.button} color='primary' variant='contained' onClick={Home}>Go To Home Page</Button>
                 </Grid> */}
 
       </Box>
-     <Footer/>
-    </Box>
 
+    </Box>
+     <Footer/>
+     </div>
   )
 
 }

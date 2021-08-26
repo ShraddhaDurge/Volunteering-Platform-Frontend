@@ -141,9 +141,9 @@ export default function ButtonAppBar() {
 	<br/>
   
 	<center> 
-        
-        <Typography variant='h5' style={{color:"#2E2EFE"}} >Opportunities Registered</Typography>
-         </center>
+
+             <Typography variant='h5' style={{color:"textSecondary"}} >Opportunities Registered</Typography>
+              </center>
     <Box m={5}>
         
         <Grid container  spacing={6} >

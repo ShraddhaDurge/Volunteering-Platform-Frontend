@@ -6,7 +6,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import axios from 'axios';
 //import home from './home';
-import logo from './logo.jpg';
+import logo from './logobg.png';
 import Snack from './Snackbar';
 import background from './background.jpeg';
 import background1 from './bg4.jpeg';
@@ -160,11 +160,11 @@ const Login = ({ handleChange }) => {
         
         <Box  >
         
-    <Box mt={1} mb={3} align="center">
+    <Box align="center">
         <img src={logo} alt="logo" width='200' height='150'/>
     </Box>
     
-    <Box  ml={40}  mr={40} mt={4} align='center'>
+    <Box  ml={33}  mr={30}  align='center'>
         <Grid container  spacing={3} align="center">
             <Grid item xs={12} sm={6} md={6}>
                 <Card style={{minwidth:200}} className={classes.grid}>

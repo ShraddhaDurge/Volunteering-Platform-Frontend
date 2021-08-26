@@ -20,7 +20,7 @@ const LeaderRR = () => {
     const [eventRR, setEventRR] = useState([])
     const event = "Past event RR"
     useEffect(() => {
-        axios.get('http://localhost:8081/account/events/getEventsList/true/Weekend event')
+        axios.get('http://localhost:8081/account/events/getEventsList/false/Weekend event')
         //('http://localhost:8081/account/events/getEvents/'.concat('/isFutureEvent').concat('future'))
         //(`http://localhost:8081/account/events/getEventsList/isFutureEvent${future}/eventTypes${event}`)
         .then(response => {
@@ -75,9 +75,9 @@ const LeaderRR = () => {
                 <Grid align='center'>
                     <br />
                     <center> 
-        
-                    <Typography variant='h5' style={{color:"#2E2EFE"}} >Rewards &amp; Recognition</Typography>
-                     </center>
+
+                             <Typography variant='h5' style={{color:"textSecondary"}} >Rewards and Recognition</Typography>
+                              </center>
                     
                 </Grid>
                 

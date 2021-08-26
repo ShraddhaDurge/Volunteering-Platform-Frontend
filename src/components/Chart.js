@@ -77,52 +77,52 @@ const useStyles = makeStyles({
 const data = [
   {
     name: "Jan",
-    Volunteers: 20
+    Volunteers: 3
   },
   {
     name: "Feb",
-    Volunteers: 15
+    Volunteers: 5
     
   },
   {
     name: "Mar",
-    Volunteers: 16
+    Volunteers: 6
   },
   {
     name: "Apr",
-    Volunteers: 10
+    Volunteers: 5
   },
   {
     name: "May",
-    Volunteers: 20
+    Volunteers: 4
   },
   {
     name: "Jun",
-    Volunteers: 15
+    Volunteers: 5
   },
   {
     name: "Jul",
-    Volunteers: 17
+    Volunteers: 6
   },
   {
     name: "Aug",
-    Volunteers: 12
+    Volunteers: 5
   },
   {
     name: "Sep",
-    Volunteers: 20
+    Volunteers: 4
   },
   {
     name: "Oct",
-    Volunteers: 23
+    Volunteers: 3
   },
   {
     name: "Nov",
-    Volunteers: 10
+    Volunteers: 4
   },
   {
     name: "Dec",
-    Volunteers: 15
+    Volunteers: 5
   }
 ];
 
@@ -235,7 +235,7 @@ export default function Chart() {
       data={data}
       
       margin={{
-        top: 5,
+        top: 10,
         right: 10,
         left: 50,
         bottom: 5

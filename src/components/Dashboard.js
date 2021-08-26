@@ -32,7 +32,7 @@ import Footer from "./Footer";
 
 
 const imgstyle = {
-  margin: '10px 60px'
+  margin: '10px 10px'
 }
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
     height: 140,
     /*minwidth:200,
     alignItems:'center'*/
-    
+
   }
 }));
 
@@ -62,24 +62,24 @@ const useStyles = makeStyles((theme) => ({
       const id=dataInfo.id
       const [count,setCount]=useState(0);
      useEffect(()=>{
-     
+
       {
-       
+
       axios.get(`http://localhost:8081/account/events/getEventParticipated/${id}`)
      .then((response) => {
        console.log(response.data.events);
         var ct = response.data.eventsCount;
-        setCount(ct);  
+        setCount(ct);
       })
     };
   })
- 
-      
-      
 
-   
-    
-      
+
+
+
+
+
+
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -88,22 +88,22 @@ const useStyles = makeStyles((theme) => ({
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
- 
+
 
   const handleClose = () => {
     setAnchorEl(null);};
 
-   
+
     let history = useHistory();
 
 
 
   return (
 
-    
-	  
 
-      <Box > 
+
+
+      <Box >
        <Homebar/>
 
 {/* <AppBar position="static">
@@ -111,7 +111,7 @@ const useStyles = makeStyles((theme) => ({
     <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
       <DashboardIcon/>
     </IconButton>
-	
+
     <Typography variant="h6" className={classes.title}>
       Dashboard
     </Typography>
@@ -134,39 +134,39 @@ const useStyles = makeStyles((theme) => ({
         <MenuItem onClick={()=>{history.push("/login");}}>Logout</MenuItem>
       </Menu>
     </div>
-    
+
   </Toolbar>
 </AppBar> */}
 
-      
+
 
 	<br/>
 
 	{/* <center><h2>Welcome {dataInfo.firstname},</h2></center> */}
-  <center> 
-       
-  <Typography variant='h5' style={{color:"#2E2EFE"}} >Dashboard</Typography>
-         </center>
-	
+    <center>
+
+         <Typography variant='h5' style={{color:"textSecondary"}} >Dashboard</Typography>
+          </center>
+	<br/>
 	  <center>
       <Box m={3}>
 		 <center>
-        <Grid container spacing={3} direction="row"
+        <Grid container spacing={5} direction="row"
   justifyContent="center"
   alignItems="center">
-		
+
           <Grid item xs={12} sm={6} md={3}>
-		   
+
             <Card className={useStyles.root}>
-              <CardActionArea onClick={()=>{history.push("/EventsRegistered");}}>
-              
-                <img src={opp} alt="oppurtunities Registered" width='40%' height='120' style={imgstyle} />
-                
+              <CardActionArea onClick={()=>{history.push("/EventsRegistered");}} style={{backgroundColor:"#D6EAF8"}}>
+
+                <img src={opp} alt="oppurtunities Registered" width='80%' height='200' style={imgstyle} />
+
                 <CardContent>
-                <Button variant="contained" color="secondary"> 
-                
+                <Button variant="contained" color="secondary">
+
                 {count}
-  
+
                 </Button>
                   <Typography gutterBottom variant="h6" component="h1" color="primary"  >
                     Opportunities Registered
@@ -177,8 +177,8 @@ const useStyles = makeStyles((theme) => ({
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
             <Card className={useStyles.root}>
-              <CardActionArea onClick={()=>{history.push("/apphome");}}>
-               <img src={explore} alt="explore" width='40%' height='120' style={imgstyle} />
+              <CardActionArea onClick={()=>{history.push("/apphome");}} style={{backgroundColor:"#D6EAF8"}}>
+               <img src={explore} alt="explore" width='80%' height='200' style={imgstyle} />
                 <CardContent>
                   <Typography gutterBottom variant="h6" component="h1" color="primary">
                     <br/>

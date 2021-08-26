@@ -93,8 +93,9 @@ const Weekend = (props) => {
       
       <Box align="center">
       <center>
-      <Typography variant='h5' style={{color:"#2E2EFE"}} >Weekend Events</Typography>
-      </center>
+
+               <Typography variant='h5' style={{color:"textSecondary"}} >Weekend Events</Typography>
+                </center>
       </Box>
       <Box m={5}>
         
@@ -106,7 +107,9 @@ const Weekend = (props) => {
                     <Card style={{minwidth:200}} className={classes.card}>
                           <CardContent>
                           <Grid container spacing={5}>
-                            
+                            <Grid item xs={6} style={gridStyle}>
+                            <img src={`data:image/png;base64,${post.image}`} height='200px' width='270px' alt="Event image" />
+                            </Grid>
                             <Grid item xs={6} style={gridStyle}>
                                <br></br>
                                 <b>{post.name}</b><br></br>

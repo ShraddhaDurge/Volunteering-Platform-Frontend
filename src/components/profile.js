@@ -177,11 +177,8 @@ const Profile=()=>{
         
         const validationSchema = Yup.object().shape({
             
-             mobile_number: Yup.string() 
-               //.matches(/^\+(?:[0-9] ?){6,14}[0-9]$/,"Enter a valid number").required("Required"),
-            //.matches(/^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
-            .matches(/^((\\([7-9]{1}\\)[ \\-]*)|([0-9]{3})[ \\-]*)*?[0-9]{3}?[ \\-]*[0-9]{3}?$/
-           
+             mobile_number: Yup.string()
+              .matches(/^[7-9]\d{9}$/
               ,"Enter valid phone number") .required("Required"),
              about: Yup.string().required("Required"),
              dob: Yup.date().required("Required"),
@@ -200,10 +197,10 @@ const Profile=()=>{
             <img src={imgl} style={imgstyle} alt=""/>
             
             </div> */}
-            <center> 
-       
-            <Typography variant='h5' style={{color:"#2E2EFE"}} >Profile</Typography>
-                   </center>
+            <center>
+
+                     <Typography variant='h5' style={{color:"textSecondary"}} >Profile Page</Typography>
+                      </center>
             </Grid>
             <br></br>
             <br></br>
