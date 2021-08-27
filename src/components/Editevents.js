@@ -7,7 +7,7 @@ import DateFnsUtils from '@date-io/date-fns';
 import Homebar from "./Homebar";
 import Footer from './Footer';
 import { MuiPickersUtilsProvider, KeyboardTimePicker, KeyboardDatePicker, } from '@material-ui/pickers';
-
+import Snack from './Snackbar';
 //import Dropdown from 'react-dropdown';
 
 import es from 'date-fns/locale/es';
@@ -77,7 +77,7 @@ const EditEvents = (props) => {
         start_time:" ",
         end_time:" "
     }
-
+    const [notify, setNotify] = React.useState({ isOpen: false, mesg: '' });
     const [wevent, setWevent] = useState([])
     const [edit, setEdit] = useReducer(editPage, initialValues);
     const { event_id,name,venue,description,start_time,end_time,event_type } = edit;
@@ -145,7 +145,10 @@ const EditEvents = (props) => {
 
             console.log(response.status)
             if (res === 200) {
-                alert("Saved Changes")
+              setNotify({
+                isOpen: true,
+                mesg: "Saved Changes Successfully!"
+            })
                 // history.push('/apphome');
                     // setSuccess(true);
                     // setMesg("Profile Updated!");
@@ -156,14 +159,20 @@ const EditEvents = (props) => {
         .catch((error) => {
             if (error.response.status === 400) {
                 console.log(error.response.data.message);
-                alert("Error ")
+                setNotify({
+                  isOpen: true,
+                  mesg: "Something Went Wrong!"
+              })
                     // setOpen(true);
                     // setMesg(error.response.data.message);
 
 
             }
             else{
-                alert("Something went wrong")
+              setNotify({
+                isOpen: true,
+                mesg: "Something Went Wrong!"
+            })
                 //    setOpen(true);
                 //     setMesg("Something went wrong");}
             console.log(error)
@@ -228,7 +237,7 @@ const EditEvents = (props) => {
                                         <CardContent>
                                             <Grid container spacing={2}>
                                                 <Grid style={gridStyle}>
-                                                <Formik  initialValues={initialValues} >
+                                                <Formik  initialValues={initialValues} onSubmit={onSubmit}>
                 {(props) => (
                     <Form>
                     <div class="container">
@@ -255,7 +264,7 @@ const EditEvents = (props) => {
                         <Grid item xs={6}>
                         <Field as={TextField}  label="Start time" name='start_time' value={start_time}
                              type="datetime-local"
-                            defaultValue="2021-08-24T10:30" min="2021-08-24"
+                            defaultValue="2021-08-27T16:30" min="2021-08-24"
                             InputLabelProps={{
                               shrink: true,
                           }}
@@ -277,7 +286,7 @@ const EditEvents = (props) => {
                         <Grid item xs={6}>
                         <Field as={TextField}  label="End time" name='end_time' value={end_time}
                         type="datetime-local"
-                       defaultValue="2021-08-24T10:30" min="2021-08-24"
+                       defaultValue="2021-08-27T17:30" min="2021-08-24"
                        InputLabelProps={{
                          shrink: true,
                      }}
@@ -335,6 +344,10 @@ const EditEvents = (props) => {
 
                         </Grid>
                     </Paper>
+                    <Snack
+                notify={notify}
+                setNotify={setNotify}
+            />
                 </Grid>
 
             <Footer/>
