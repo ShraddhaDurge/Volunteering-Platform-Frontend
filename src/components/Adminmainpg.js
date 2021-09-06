@@ -22,7 +22,7 @@ import { Table, TableCell, TableBody, TableHead, TableRow, TableContainer } from
 import Snack from './Snackbar';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { deepPurple } from '@material-ui/core/colors';
-
+import Alert from '@material-ui/lab/Alert';
 const useStyles = makeStyles((theme) => ({
   purple: {
     color: theme.palette.getContrastText(deepPurple[500]),
@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
     border: '1px solid lightgray',
     borderRadius: '20px',
     backgroundColor: '#Faf0e6',
-    borderColor: 'red',
+
     marginTop: '1px',
     width: 300,
     marginLeft: '30px'
@@ -64,10 +64,10 @@ const useStyles = makeStyles((theme) => ({
   table: {
     minWidth: 400,
   },
+
   formControl: {
     // marginTop: theme.spacing(2),
     minWidth: 180,
-
 
   },
 }));
@@ -109,6 +109,9 @@ export default function Adminpg() {
   const [user, setUser] = useState([])
   const [count, setCount] = useState()
   const [notify, setNotify] = React.useState({ isOpen: false, mesg: '' });
+  const [flag, setFlag] = useState(false);
+  const [select,setSelect]=useState(false);
+  const [cnt, setCnt] = useState()
   useEffect(() => {
     axios.get('http://localhost:8081/account/events/getEventsList/true/Weekend event')
 
@@ -116,7 +119,12 @@ export default function Adminpg() {
         console.log(res)
         console.log(res.data[0].event_id)
         setWevent(res.data)
-
+        setCnt(res.data.length)
+        if(cnt===0) {
+        setFlag(true);
+      }else{
+        setFlag(false);
+      }
       })
       .catch(err => {
         console.log(err)
@@ -127,6 +135,7 @@ export default function Adminpg() {
   const handleChange = (event) => {
     setEventName(event.target.value);
     const eventn = event.target.value;
+    setSelect(true);
     axios.get(`http://localhost:8081/account/admin/getAllParticipants/${eventn}`)
 
     .then(res => {
@@ -146,7 +155,7 @@ const sentEmail = () => {
           // alert("Remainders sent successfully")
           setNotify({
                     isOpen:true,
-                    mesg:"Remainders sent successfully!"
+                    mesg:"Reminders sent successfully!"
                 })
         }
 
@@ -213,7 +222,7 @@ const sentEmail = () => {
 
         <Typography variant='h4' color="textSecondary" align="center">Admin Board</Typography>
 
-        <p style={{ height: "30px", width: "1200px", padding: "5px", borderRadius: "5px", color: "darkgoldenrod" }}>
+        <p style={{ height: "30px", width: "1200px", padding: "5px", borderRadius: "5px", color: "#2874a6" }}>
           By Danzel Washington  -  <strong><i> Man gives you the award but god gives you the reward </i></strong>
         </p>
       </center>
@@ -222,20 +231,20 @@ const sentEmail = () => {
         <Grid container spacing={1} className={classes.grid}>
 
           <Grid item xs={4} >
-            <Paper className={classes.gridItem} style={{backgroundColor:'#FFF59D'}}>
+            <Paper className={classes.gridItem} style={{backgroundColor:'#FFBD00'}}>
               <Typography gutterBottom variant="body1" color="Black" align="center" onClick={addEvents} style={{ cursor: 'pointer' }}>
                 Add Events
               </Typography></Paper>
 
           </Grid>
           <Grid item xs={4} >
-            <Paper className={classes.gridItem} style={{backgroundColor:'#B2FF59'}}>
+            <Paper className={classes.gridItem} style={{backgroundColor:'#009BFF'}}>
               <Typography gutterBottom variant="body1" color="Black" align="center" onClick={editEvents} style={{ cursor: 'pointer'}}>
                 Edit Events
               </Typography></Paper>
           </Grid>
           <Grid item xs={4} >
-            <Paper className={classes.gridItem} style={{backgroundColor:'#18FFFF'}}>
+            <Paper className={classes.gridItem} style={{backgroundColor:'#FF8700'}}>
               <Typography gutterBottom variant="body1" color="Black" align="center" onClick={pastDialogue} style={{ cursor: 'pointer' }}>
                 Upload Past Event Photos
               </Typography></Paper>
@@ -261,8 +270,9 @@ const sentEmail = () => {
                 direction="row"
               // justifyContent="center"
               //alignItems="center"
+              spacing={10}
               >
-                <Grid item>
+                <Grid item md={4}>
                 <FormControl variant="outlined" className={classes.formControl} >
 
                   <InputLabel id="demo-event-name-label">Event Name</InputLabel>
@@ -284,39 +294,45 @@ const sentEmail = () => {
 
 
                 </FormControl></Grid>
-                <Grid item>
-                <Box ml={40} >
+                <Grid item md={4}>
+                {/* <Box ml={40} > */}
                 <Grid
                 container
                 direction="row">
 
                 <Grid item>
-                <Typography gutterBottom variant='h6' color="secondary" align="center">Registered Users</Typography></Grid>
+                <Typography gutterBottom variant='h5' color="secondary" align="center">Registered Users</Typography></Grid>
                 <Grid item>
                 <Tooltip title="Count of participants"><Avatar  className={classes.purple} style={{marginLeft:'20px'}}>{count}</Avatar>
                 </Tooltip></Grid></Grid>
-                </Box>
+                {/* </Box> */}
 
                 {/* <Tooltip title="Count of participants"><Avatar style={{ color: 'purple', marginLeft: 20, marginRight: 20 }}>{count}</Avatar>
                 </Tooltip> */}
                 </Grid>
-                <Grid item>
-                  <Box ml={40}>
+                <Grid item md={4}>
+                  <center>
                   <Tooltip title="Sent Email">
                   <IconButton color='primary' aria-label="Notify"
                    onClick={sentEmail}>
 
-                    <NotificationsIcon />
+                    <NotificationsIcon fontSize="large"/>
                   </IconButton></Tooltip>
-                  </Box>
+                  </center>
                   </Grid>
                   </Grid>
 
 
                 <br/>
+                <Grid container>
+                  <Grid item xs={4} md={8}>
               <center>
-              <TableContainer component={Paper} style={{width:800}}>
+
+              {(flag)?<div font-color='red'><Alert severity="error">No Events Added Yet!</Alert></div>:
+              <TableContainer component={Paper} style={{marginLeft:'25%'}} >
+                {(select)?
                 <Table className={classes.table} aria-label="simple table">
+
                   <TableHead>
                     <TableRow>
                       <TableCell align="center" >First Name</TableCell>
@@ -336,8 +352,8 @@ const sentEmail = () => {
                       </TableRow>
                     ))}
                   </TableBody>
-                </Table>
-              </TableContainer></center>
+                </Table>:''}
+              </TableContainer>}</center></Grid></Grid>
             </Paper>
           </Grid>
         </Grid>

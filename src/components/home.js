@@ -120,17 +120,17 @@ const Home = () => {
 
 <Typography variant='h4' color="textSecondary"  align="center">Event Board</Typography>
 
- <p style={{ height: "30px", width: "1200px", padding: "5px", borderRadius: "5px", color:"darkgoldenrod" }}>
+ <p style={{ height: "30px", width: "1200px", padding: "5px", borderRadius: "5px", color:"#2874a6" }}>
  By Steve Maraboli  -  <strong><i> ~ A kind gesture can reach a wound that only compassion can heal </i></strong>
 </p>
 </center>
-        <Box m={2}>
-                <Grid container direction="column" justifyContent="flex-end" alignItems="flex-end">
-                  <Grid item xs={12} sm={6} md={3} >
-                    <Button type='submit' variant='contained' style={{backgroundColor:'#199bf1',color:'white'}} onClick={Past}>Past Events</Button>
-                  </Grid>
-                </Grid>
-              </Box>
+        <Box mb={2} >
+        <Grid container direction="column" justifyContent="flex-end" alignItems="flex-end">
+          <Grid item xs={12} sm={6} md={3} >
+            <Button type='submit' variant='contained' style={{backgroundColor:'#199bf1',color:'white'}} onClick={Past}>Past Events</Button>
+          </Grid>
+        </Grid>
+      </Box>
         {/* <Paper variant="outlined" style={{ width: "1150px", padding: "5px", borderRadius: "5px", marginTop: "20px" }}> */}
           <Grid container spacing={5} >
             <Grid item xs={12} sm={12} md={4} >
@@ -139,18 +139,18 @@ const Home = () => {
                 <CardActionArea onClick={()=>{history.push("/weekend");}}>
                   <CardMedia
                     component="img"
-                    alt="Contemplative Reptile"
+                    alt="Weekend Image"
                     height="200"
                     image={weekend}
-                    title="Contemplative Reptile"
+                    title="Weekend Image"
                   />
                   <CardContent  style={{backgroundColor:"#80DEEA"}}>
                     <Typography gutterBottom variant="h5" component="h2">
                       Weekend events
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
-                      Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                      across all continents except Antarctica
+                      After a tiring week,want to explore new things ??? Explore  here for events
+                      that will make your weekends brighter.
                     </Typography>
                   </CardContent>
                 </CardActionArea>
@@ -165,18 +165,18 @@ const Home = () => {
                 <CardActionArea>
                   <CardMedia
                     component="img"
-                    alt="Contemplative Reptile"
+                    alt="Webinar image"
                     height="200"
                     image={webinar}
-                    title="Contemplative Reptile"
+                    title="webinar"
                   />
                   <CardContent style={{backgroundColor:"#F48FB1"}}>
                     <Typography gutterBottom variant="h5" component="h2">
                       Webinar for NGO's
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
-                      Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                      across all continents except Antarctica
+                      Want to share your innovative thoughts???Explore here for opportunities
+                      were you can expand the horizons of NGOs..
                     </Typography>
                   </CardContent>
                 </CardActionArea>
@@ -189,18 +189,18 @@ const Home = () => {
                 <CardActionArea>
                   <CardMedia
                     component="img"
-                    alt="Contemplative Reptile"
+                    alt="food4thought image"
                     height="200"
                     image={food4thought}
-                    title="Contemplative Reptile"
+                    title="food for thought"
                   />
                   <CardContent style={{backgroundColor:"#Fbceb1"}}>
                     <Typography gutterBottom variant="h5" component="h2">
                       Food for thought
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
-                      Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                      across all continents except Antarctica
+                      Explore here for intellectual nourishment..
+                      Explore here for the events that will make you think out of box..
                     </Typography>
                   </CardContent>
                 </CardActionArea>
@@ -214,18 +214,18 @@ const Home = () => {
                 <CardActionArea>
                   <CardMedia
                     component="img"
-                    alt="Contemplative Reptile"
+                    alt="Art and craft image"
                     height="200"
                     image={art}
-                    title="Contemplative Reptile"
+                    title="Art and craft"
                   />
                   <CardContent style={{backgroundColor:"#FFF59D"}}>
                     <Typography gutterBottom variant="h5" component="h2">
                       Art and craft
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
-                      Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                      across all continents except Antarctica
+                      Art and Crafts are a great way to ignite creativity and spark in minds.
+                      Explore here for enhancing your creative minds.
                     </Typography>
                   </CardContent>
                 </CardActionArea>
@@ -240,18 +240,18 @@ const Home = () => {
                 <CardActionArea>
                   <CardMedia
                     component="img"
-                    alt="Contemplative Reptile"
+                    alt="Social event image"
                     height="200"
                     image={social}
-                    title="Contemplative Reptile"
+                    title="Social"
                   />
                   <CardContent style={{backgroundColor:"#E5e4e2"}}>
                     <Typography gutterBottom variant="h5" component="h2">
                       Social Events
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
-                      Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                      across all continents except Antarctica
+                      Want to socialize and make memories??Explore here know about events that will expand
+                       your social circle..
                     </Typography>
                   </CardContent>
                 </CardActionArea>
@@ -265,18 +265,18 @@ const Home = () => {
                 <CardActionArea>
                   <CardMedia
                     component="img"
-                    alt="Contemplative Reptile"
+                    alt="fund raising events"
                     height="200"
                     image={fund}
-                    title="Contemplative Reptile"
+                    title="fund raising events"
                   />
                   <CardContent style={{backgroundColor:"#82beb5"}}>
                     <Typography gutterBottom variant="h5" component="h2">
                       Fund Raising Events
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
-                      Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                      across all continents except Antarctica
+                      When events are for helping others it worth more...Explore here and
+                      be the light in some others path..
                     </Typography>
                   </CardContent>
                 </CardActionArea>

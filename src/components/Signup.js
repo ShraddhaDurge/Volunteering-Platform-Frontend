@@ -124,7 +124,7 @@ const Register = () => {
                       borderRadius: '20px',
                       border: '1px solid #FFFFFF',
                       backgroundColor: "#ECE5E2",
-                      color: '#2E2EFE',
+                      color: '#199bf1',
                       fontWeight: 'bold',
                       letterSpacing: '1px',
                       marginTop: '22px',
@@ -136,7 +136,7 @@ const Register = () => {
         , buttons: {
             borderRadius: '20px',
             border: '1px solid #2E2EFE',
-            backgroundColor: "#2E2EFE",
+            backgroundColor: "#199bf1",
             color: '#FFFFFF',
             //fontSize: '12px',
             //fontWeight: 'bold',

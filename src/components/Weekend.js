@@ -93,9 +93,11 @@ const Weekend = (props) => {
       
       <Box align="center">
       <center>
-
                <Typography variant='h5' style={{color:"textSecondary"}} >Weekend Events</Typography>
-                </center>
+               <p style={{ height: "30px", width: "1200px", padding: "5px", borderRadius: "5px", color: "#2874a6" }}>
+                     By Helen Keller -  <strong><i> Alone we can do so little; together we can do so much. </i></strong>
+               </p>
+      </center>
       </Box>
       <Box m={5}>
         

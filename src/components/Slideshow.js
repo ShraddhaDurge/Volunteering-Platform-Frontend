@@ -98,10 +98,6 @@ function Slideshow(){
       </Grid>
       </Grid>
 
-
-      <br />
-      <br />
-
       <Card style={{ marginTop: '30px' ,marginRight:"10px",padding:'10px',borderRadius:'20px'}} className={classes.card}>
         <Grid container spacing={2}
           direction="column"
@@ -139,7 +135,6 @@ function Slideshow(){
 
       </Card>
       <br />
-      <Footer />
     </div>
 
   );

@@ -127,7 +127,7 @@ const imgstyle = {
 
              <Typography variant='h4' color="textSecondary"  align="center">Dashboard</Typography>
 
-              <p style={{ height: "30px", width: "1200px", padding: "5px", borderRadius: "5px", color:"darkgoldenrod" }}>
+              <p style={{ height: "30px", width: "1200px", padding: "5px", borderRadius: "5px", color:"#2874a6" }}>
               By Bobby Unser  -  <strong><i> Success is where preparation and opportunity meet </i></strong>
             </p>
             </center>
