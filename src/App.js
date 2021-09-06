@@ -24,6 +24,7 @@ import Pastupload from './components/Pastupload';
 import LeaderRR from './components/LeaderRR'
 import Slideshow from './components/Slideshow'
 import SlideshowReg from './components/SlideshowReg'
+import 'react-app-polyfill/stable'
 
 function App() {
   return (
