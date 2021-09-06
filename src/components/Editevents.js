@@ -95,7 +95,7 @@ const EditEvents = (props) => {
 
   };
   React.useEffect(() => {
-    axios.get('http://localhost:8081/account/events/getEventsList/true/Weekend event')
+    axios.get('/account/events/getEventsList/true/Weekend event')
       //('http://localhost:8081/account/events/getEvents/'.concat('/isFutureEvent').concat('event'))
       //(`http://localhost:8081/account/events/getEventsList/isFutureEvent${future}/eventTypes${event}`)
       .then(response => {
@@ -116,7 +116,7 @@ const EditEvents = (props) => {
     const evid = event.target.value;
     localStorage.setItem('editeventId', JSON.stringify(evid));
     const editid = JSON.parse(localStorage.getItem("editeventId"));
-    axios.get(`http://localhost:8081/account/events/${editid}`)
+    axios.get(`/account/events/${editid}`)
       .then(response => {
         console.log(response)
         console.log(response.data);
@@ -149,7 +149,7 @@ const EditEvents = (props) => {
       end_time
     }
 
-    axios.post("http://localhost:8081/account/admin/updateEvents", user)
+    axios.post("/account/admin/updateEvents", user)
       .then((response) => {
         var res = response.status;
 

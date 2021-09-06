@@ -49,7 +49,7 @@ export default function ButtonAppBar() {
 
     useEffect(() => {
         {
-            axios.get(`http://localhost:8081/account/events/getEventParticipated/${id}`)
+            axios.get(`/account/events/getEventParticipated/${id}`)
                 .then((response) => {
 
                     setEvent(response.data.events)

@@ -113,7 +113,7 @@ export default function Adminpg() {
   const [select,setSelect]=useState(false);
   const [cnt, setCnt] = useState()
   useEffect(() => {
-    axios.get('http://localhost:8081/account/events/getEventsList/true/Weekend event')
+    axios.get('/account/events/getEventsList/true/Weekend event')
 
       .then(res => {
         console.log(res)
@@ -136,7 +136,7 @@ export default function Adminpg() {
     setEventName(event.target.value);
     const eventn = event.target.value;
     setSelect(true);
-    axios.get(`http://localhost:8081/account/admin/getAllParticipants/${eventn}`)
+    axios.get(`/account/admin/getAllParticipants/${eventn}`)
 
     .then(res => {
       console.log(res)
@@ -149,7 +149,7 @@ export default function Adminpg() {
     })
 }
 const sentEmail = () => {
-    axios.post(`http://localhost:8081/account/admin/sendReminders/${eventName}`)
+    axios.post(`/account/admin/sendReminders/${eventName}`)
       .then(res => {
         if (res.status === 200) {
           // alert("Remainders sent successfully")

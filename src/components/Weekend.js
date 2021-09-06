@@ -35,7 +35,7 @@ const Weekend = (props) => {
     const event="Weekend event"
     //const future=true
     useEffect(()=>{
-        axios.get('http://localhost:8081/account/events/getEventsList/true/Weekend event')
+        axios.get('/account/events/getEventsList/true/Weekend event')
         //('http://localhost:8081/account/event/getEventList/'.concat('/isFutureEvent').concat('future').concat('/eventType').concat('event'))
         //(`http://localhost:8081/account/events/getEventsList/isFutureEvent${future}/eventType${event}`)
         .then(res=>{
@@ -53,7 +53,7 @@ const Weekend = (props) => {
         const email=dataInfo.id
         
         
-            axios.post(`http://localhost:8081/account/events/registerForEvent/${id}/${email}`)
+            axios.post(`/account/events/registerForEvent/${id}/${email}`)
         .then((response) => {
             var res=response.status
             console.log(response)

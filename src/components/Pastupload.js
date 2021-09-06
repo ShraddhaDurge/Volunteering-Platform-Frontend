@@ -56,7 +56,7 @@ export default function Pastupload(props) {
   const hiddenFileInput = React.useRef(null);
   // const evid=null;
   React.useEffect(() => {
-    axios.get('http://localhost:8081/account/events/getEventsList/false/Weekend event')
+    axios.get('/account/events/getEventsList/false/Weekend event')
 
       .then(res => {
         console.log(res)
@@ -115,7 +115,7 @@ export default function Pastupload(props) {
     //  "Content-Type":"multipart/form-data"}
     // })
     axios({
-      url:`http://localhost:8081/account/admin/addImage/${dataId}`,
+      url:`/account/admin/addImage/${dataId}`,
       method:'post',
       data:fd,
       config

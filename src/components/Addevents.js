@@ -64,7 +64,8 @@ const Add_Event = (props) => {
         }
 
         console.log(Event)
-        axios.post("http://localhost:8081/account/admin/addEvents", Event)
+//        axios.post("http://localhost:8081/account/admin/addEvents", Event)
+            axios.post("/account/admin/addEvents", Event)
             .then((response) => {
                 var resp = response.status;
                 console.log(response.data);

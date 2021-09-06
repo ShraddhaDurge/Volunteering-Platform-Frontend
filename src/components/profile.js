@@ -104,7 +104,7 @@ const Profile=()=>{
     const [open, setOpen] =useState(false);
     useEffect(()=>{
 
-        axios.get(`http://localhost:8081/account/getProfile/${id}`)
+        axios.get(`/account/getProfile/${id}`)
         .then(res=>{
             console.log(res)
             const pro=res.data
@@ -133,7 +133,7 @@ const Profile=()=>{
         };
 
         console.log(user)
-        axios.post("http://localhost:8081/account/saveProfile", user)
+        axios.post("/account/saveProfile", user)
         .then((response) => {
             var res = response.status;
 
