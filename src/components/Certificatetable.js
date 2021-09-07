@@ -94,7 +94,7 @@ ElevationScroll.propTypes = {
 
    {
 
-   axios.get('/api/account/events/pastEvents')
+   axios.get('/account/events/pastEvents')
   .then((response) => {
 
 
@@ -137,7 +137,7 @@ const [mesg,setMesg]=useState('');
 const handleRegistration=(eventid,e)=>{
 
 
-  axios.post(`/api/account/leader/sendCertificates/${eventid}`)
+  axios.post(`/account/leader/sendCertificates/${eventid}`)
   .then((response) => {
       var res=response.status
       console.log(response)

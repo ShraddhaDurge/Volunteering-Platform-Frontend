@@ -62,7 +62,7 @@ export default function UploadImage(props) {
         console.log(dataId);
 
         axios({
-            url:`/api/account/admin/addImage/${dataId}`,
+            url:`/account/admin/addImage/${dataId}`,
             method: 'post',
             data: fd,
             config

@@ -81,7 +81,7 @@ const Leader = () => {
   const [count,setCount]=useState();
   let history = useHistory()
   useEffect(() => {
-    axios.get('/api/account/events/getEventsList/false/Weekend event')
+    axios.get('/account/events/getEventsList/false/Weekend event')
 
       .then(response => {
         console.log(response)
@@ -102,7 +102,7 @@ const Leader = () => {
     localStorage.setItem('LeaderboardeventId', JSON.stringify(evenm));
     const eventname = JSON.parse(localStorage.getItem("LeaderboardeventId"));
     console.log(eventname)
-    axios.get(`/api/account/admin/getAllParticipants/${eventname}`)
+    axios.get(`/account/admin/getAllParticipants/${eventname}`)
       .then(response => {
         console.log(response)
         console.log(response.data);
@@ -122,7 +122,7 @@ const Leader = () => {
   const handleNomination=(userid,e)=>{
      const evename = JSON.parse(localStorage.getItem("LeaderboardeventId"));
     setDisable(true)
-    axios.post(`/api/account/leader/sendNominationCard/${userid}/${evename}`)
+    axios.post(`/account/leader/sendNominationCard/${userid}/${evename}`)
          .then((response) => {
         var res=response.status
         console.log(response)

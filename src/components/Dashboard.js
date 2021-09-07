@@ -91,7 +91,7 @@ const imgstyle = {
 
         {
 
-        axios.get(`/api/account/events/getEventParticipated/${id}`)
+        axios.get(`/account/events/getEventParticipated/${id}`)
        .then((response) => {
          console.log(response.data.events);
           var ct = response.data.eventsCount;
