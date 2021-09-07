@@ -49,7 +49,7 @@ const Register = () => {
         }
         
         console.log(user)
-        axios.post("/account/register", user)
+        axios.post("/api/account/register", user)
             .then((response) => {
                 var res = response.status;
                 console.log(response.data)

@@ -36,7 +36,7 @@ const Login = ({ handleChange }) => {
            
            console.log(user)
         
-        axios.post("/account/login", user)
+        axios.post("/api/account/login", user)
         .then((response) => {
             var res = response.status;
             console.log(response.data)

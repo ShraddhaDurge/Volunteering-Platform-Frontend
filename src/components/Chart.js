@@ -120,7 +120,7 @@ export default function Chart() {
 
     let future=true
     useEffect(()=>{
-        axios.get('/account/leader/userAnalyticsCounts')
+        axios.get('/api/account/leader/userAnalyticsCounts')
         .then(res=>{
             console.log(res)
             console.log(res.data)

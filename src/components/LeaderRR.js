@@ -37,7 +37,7 @@ const ITEM_PADDING_TOP = 8;
         localStorage.setItem('LeadereventId', JSON.stringify(evid));
         const eventn = JSON.parse(localStorage.getItem("LeadereventId"));
         console.log(eventn)
-         axios.get(`/account/admin/getAllParticipants/${eventn}`)
+         axios.get(`/api/account/admin/getAllParticipants/${eventn}`)
          .then(response => {
             console.log(response)
             console.log(response.data);
@@ -57,7 +57,7 @@ const ITEM_PADDING_TOP = 8;
     const [eventId, setEventId] = React.useState();
 
     useEffect(() => {
-        axios.get('/account/events/getEventsList/false/Weekend event')
+        axios.get('/api/account/events/getEventsList/false/Weekend event')
         //('http://localhost:8081/account/events/getEvents/'.concat('/isFutureEvent').concat('past'))
         //(`http://localhost:8081/account/events/getEventsList/isFutureEvent${past}/eventTypes${event}`)
         .then(response => {
@@ -100,7 +100,7 @@ const ITEM_PADDING_TOP = 8;
     const handleNomination=(userid,e)=>{
         // const eventname = JSON.parse(localStorage.getItem("LeadereventId"));
         setDisable(true)
-        axios.post(`/account/leader/sendNominationCard/${userid}/${eventname}`)
+        axios.post(`/api/account/leader/sendNominationCard/${userid}/${eventname}`)
              .then((response) => {
             var res=response.status
             console.log(response)

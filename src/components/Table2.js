@@ -60,7 +60,7 @@ export default function ButtonAppBar() {
 
     useEffect(() => {
         {
-            axios.get(`/account/events/getEventParticipated/${id}`)
+            axios.get(`/api/account/events/getEventParticipated/${id}`)
                 .then((response) => {
 
                     setEvent(response.data.events)

@@ -109,7 +109,7 @@ const StyledMenu = withStyles({
 
    {
 
-   axios.get('/account/events/getEventsList/false/Weekend event')
+   axios.get('/api/account/events/getEventsList/false/Weekend event')
   .then((response) => {
 
 
@@ -166,7 +166,7 @@ const [disable, setDisable] = React.useState(false);
 const handleRegistration=(eventid,e)=>{
 
   setDisable(true)
-  axios.post(`/account/leader/sendCertificates/${eventid}`)
+  axios.post(`/api/account/leader/sendCertificates/${eventid}`)
   .then((response) => {
       var res=response.status
       console.log(response)

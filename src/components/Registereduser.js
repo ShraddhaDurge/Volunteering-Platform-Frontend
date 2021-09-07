@@ -31,7 +31,7 @@ const Reguserpg = (props) => {
   const eventn = JSON.parse(localStorage.getItem("eventName"))
   console.log(eventn)
   useEffect(() => {
-    axios.get(`/account/admin/getAllParticipants/${eventn}`)
+    axios.get(`/api/account/admin/getAllParticipants/${eventn}`)
 
       .then(res => {
         console.log(res)
@@ -46,7 +46,7 @@ const Reguserpg = (props) => {
   const [disable, setDisable] = React.useState(false);
   const sentEmail = () => {
 
-    axios.post(`/account/admin/sendReminders/${eventn}`)
+    axios.post(`/api/account/admin/sendReminders/${eventn}`)
       .then(res => {
         if (res.status === 200) {
           // alert("Remainders sent successfully")
