@@ -174,7 +174,7 @@ const Add_Event = (props) => {
 
                                                 <Grid item xs={6} sm={6}>
 
-                                                    <Field as={TextField} variant='outlined' fullWidth label='Name' name='eventName' value={props.values.eventName}
+                                                    <Field as={TextField} fullWidth label='Name' name='eventName' value={props.values.eventName}
                                                         required error={props.errors.eventName && props.touched.eventName}
                                                         onInput={props.handleChange}
                                                         pattern="[Aa-Zz]"
@@ -184,23 +184,23 @@ const Add_Event = (props) => {
 
                                                 <Grid item xs={6}>
 
-                                                    <Field as={TextField} variant='outlined' fullWidth label='Type' name='eventType' value={props.values.eventType}
+                                                    <Field as={TextField} fullWidth label='Type' name='eventType' value={props.values.eventType}
                                                         onChange={props.handleChange} placeholder="Enter the type of Event" required />
 
 
                                                 </Grid>
                                                 <Grid item xs={12}>
-                                                    <Field as={TextField} variant='outlined' id="standard-textarea" fullWidth label='Description' name='eventDescription' value={props.values.eventDescription}
+                                                    <Field as={TextField} id="standard-textarea" fullWidth label='Description' name='eventDescription' value={props.values.eventDescription}
                                                         onChange={props.handleChange} placeholder="Enter the Description of Event" multiline required />
                                                 </Grid>
 
                                                 <Grid item xs={12}>
-                                                    <Field as={TextField} variant='outlined' fullWidth label='Venue' name='eventVenue' value={props.values.eventVenue}
+                                                    <Field as={TextField} fullWidth label='Venue' name='eventVenue' value={props.values.eventVenue}
                                                         onChange={props.handleChange} placeholder="Enter the Venue of Event" required />
                                                 </Grid>
 
                                                 <Grid item xs={12}>
-                                                    <Field as={TextField} variant='outlined' fullWidth label='Start Date and Time' name='startTime' value={props.values.startTime}
+                                                    <Field as={TextField} fullWidth label='Start Date and Time' name='startTime' value={props.values.startTime}
                                                         id="datetime-local" type="datetime-local" defaultValue="Default Value"
                                                         defaultValue="2021-08-24T10:30" min="2021-08-24"
 
@@ -212,7 +212,7 @@ const Add_Event = (props) => {
                                                 </Grid>
 
                                                 <Grid item xs={12}>
-                                                    <Field as={TextField} variant='outlined' fullWidth label='End Date and Time' name='endTime' value={props.values.endTime}
+                                                    <Field as={TextField} fullWidth label='End Date and Time' name='endTime' value={props.values.endTime}
                                                         id="datetime-local" type="datetime-local" defaultValue="Default Value"
                                                         defaultValue="2021-08-24T10:30" min="today"
                                                         InputLabelProps={{

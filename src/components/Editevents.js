@@ -261,7 +261,7 @@ const EditEvents = (props) => {
                           {/* <div class="container"> */}
                           <Grid container spacing={2}>
                           <Grid item xs={6}>
-                            <FormControl alignItems="center" variant="outlined" style={{ minWidth: 200, height: 80 }}>
+                            <FormControl alignItems="center" style={{ minWidth: 200, height: 80 }}>
                               <InputLabel id="demo-simple-select-outlined-label">Event Name</InputLabel>
                               <Select
                                 labelId="demo-simple-select-outlined-label"
@@ -281,14 +281,7 @@ const EditEvents = (props) => {
                               {/* <FormHelperText>Find event by name</FormHelperText> */}
                               </FormControl></Grid>
                               <Grid item xs={6}>
-                                <Field as={TextField} variant="outlined" label='Event name' disabled value={name} name="name" required style={{ marginLeft: '-20px' }} />
-                              </Grid>
-                              <Grid item xs={6}>
-                                <Field as={TextField} variant="outlined" label='Event id' name="event_id" disabled value={event_id} required />
-                              </Grid>
-
-                              <Grid item xs={6}>
-                                <Field as={TextField} variant="outlined" label='Venue' name="venue" onInput={props.handleChange} value={venue} style={{ marginLeft: '-20px' }}
+                                <Field as={TextField} label='Venue' name="venue" onInput={props.handleChange} value={venue} style={{ marginLeft: '-20px' }}
                                   onChange={e =>
                                     setEdit({
                                       type: 'field',
@@ -300,7 +293,7 @@ const EditEvents = (props) => {
                                   required />
                               </Grid>
                               <Grid item xs={6}>
-                                <Field as={TextField} variant="outlined" label="Start time" name='start_time' value={start_time}  style={{ marginLeft: '30px' }}
+                                <Field as={TextField} label="Start time" name='start_time' value={start_time}  style={{ marginLeft: '10px' }}
                                   type="datetime-local"
                                   defaultValue="2021-08-24T10:30" min="2021-08-24"
                                   InputLabelProps={{
@@ -322,7 +315,7 @@ const EditEvents = (props) => {
                               </Grid>
 
                               <Grid item xs={6}>
-                                <Field as={TextField} variant="outlined" label="End time" name='end_time' value={end_time} style={{ marginLeft: '20px' }}
+                                <Field as={TextField} label="End time" name='end_time' value={end_time} style={{ marginLeft: '20px' }}
                                   type="datetime-local"
                                   defaultValue="2021-08-24T10:30" min="2021-08-24"
                                   InputLabelProps={{
@@ -347,7 +340,7 @@ const EditEvents = (props) => {
 
 
                               <Grid item xs={12}>
-                                <Field as={TextField} variant="outlined" label='Description' name="description" required value={description} style={{ marginLeft: '15px', width: '500px' }}
+                                <Field as={TextField} label='Description' name="description" required value={description} style={{ marginLeft: '10px', width: '500px' }}
                                   required onInput={props.handleChange}
                                   InputLabelProps={{
                                     shrink: true,
