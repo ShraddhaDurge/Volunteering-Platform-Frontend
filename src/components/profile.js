@@ -210,19 +210,19 @@ const Profile=()=>{
                     <div class="container">
                    <Grid container spacing={2}>
                         <Grid item xs={6}>
-                                <Field as={TextField} variant='outlined' label='First Name' name="fname" disabled value={info1.firstname}  required/>
+                                <Field as={TextField} label='First Name' name="fname" disabled value={info1.firstname}  required/>
                         </Grid>
                         <Grid item xs={6}>
-                            <Field as={TextField} variant='outlined' label='Last Name' name="lname" disabled value={info1.lastname}  required />
+                            <Field as={TextField} label='Last Name' name="lname" disabled value={info1.lastname}  required />
                         </Grid>
 
                         <Grid item xs={6}>
-                            <Field as={TextField} variant='outlined' label='Email Id' name="email" disabled value={info1.email}
+                            <Field as={TextField} label='Email Id' name="email" disabled value={info1.email}
 
                               required/>
                         </Grid>
                         <Grid item xs={6}>
-                            <Field as={TextField} variant='outlined' label='Mobile Number' name="mobile_number" required  value={mobile_number}
+                            <Field as={TextField} label='Mobile Number' name="mobile_number" required  value={mobile_number}
                             error={props.errors.mobile_number && props.touched.mobile_number} onInput={props.handleChange}
                             pattern="[789]{1}[0-9]{9}"
                             onChange={e=>
@@ -255,7 +255,7 @@ const Profile=()=>{
 
                         </Grid>
                         <Grid item xs={6}>
-                            <Field as={TextField} variant='outlined' label='About volunteer'  name="about" required value={about}
+                            <Field as={TextField} label='About volunteer'  name="about" required value={about}
                             error={props.errors.about && props.touched.about}  onInput={props.handleChange}
                             onChange={(e) =>
                               setMyprofile({
@@ -266,7 +266,7 @@ const Profile=()=>{
                               } helperText={<ErrorMessage name="about" />}/>
                         </Grid>
                         <Grid item xs={6}>
-                            <Field as={TextField} variant='outlined' label='Location' name="location" required value={location}
+                            <Field as={TextField} label='Location' name="location" required value={location}
                             error={props.errors.location && props.touched.location}   onInput={props.handleChange}
                             onChange={(e) =>
                               setMyprofile({
@@ -297,7 +297,7 @@ const Profile=()=>{
                             } />Female
                         </Grid>
                         <Grid item xs={12}>
-                            <Field as={TextField} variant='outlined' label='Address' name="address" required fullWidth value={address}
+                            <Field as={TextField} label='Address' name="address" required fullWidth value={address}
                             error={props.errors.address && props.touched.address} required   onInput={props.handleChange}
                             onChange={(e) =>
                               setMyprofile({
