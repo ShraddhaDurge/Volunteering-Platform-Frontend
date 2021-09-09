@@ -39,11 +39,11 @@ const useStyles = makeStyles((theme) => ({
         marginTop:"8px"
     },
     carouselCaption:{
-        '&:hover':{
-            backgroundColor:"#F5F5F5",
-            backgroundOpacity:0.05,
+            backgroundColor:"rgba(240,240,240,0.2)",
+            '&:hover':{
+                backgroundColor:"rgba(240,240,240,0.5)",
+            },
         }
-    }
 }));
 
 
@@ -112,16 +112,18 @@ const PastEvents = (props) => {
                                     alt="HH-Event"
                                 />
                                 <Carousel.Caption >
-                                    <h4 style={{color:"black"}} >
-                                        {post.name}
-                                    </h4>
-                                    <p align="left" style={{color:"black"}} >
-                                        <b>Venue</b>: {post.venue}
-                                        <br />
-                                        <b>Date</b>: {moment(post.start_time).format('MMMM Do YYYY')}
-                                        <br />
-                                        <b>About</b>: {post.description}
-                                    </p>
+                                    <Paper className={classes.carouselCaption} style={{margin:'1px', borderRadius:'20px', padding:'1px 5px'}}>
+                                          <h4 style={{color:"black"}} >
+                                               {post.name}
+                                          </h4>
+                                          <p align="left" style={{color:"solid black"}} >
+                                              <b>Venue</b>: {post.venue}
+                                              <br />
+                                              <b>Date</b>: {moment(post.start_time).format('MMMM Do YYYY')}
+                                              <br />
+                                              <b>About</b>: {post.description}
+                                           </p>
+                                    </Paper>
                                 </Carousel.Caption>
                             </Carousel.Item>
                   ))}

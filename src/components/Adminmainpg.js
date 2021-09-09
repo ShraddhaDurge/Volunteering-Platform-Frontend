@@ -273,7 +273,7 @@ const sentEmail = () => {
               spacing={10}
               >
                 <Grid item md={4}>
-                <FormControl variant="outlined" className={classes.formControl} >
+                <FormControl className={classes.formControl} >
 
                   <InputLabel id="demo-event-name-label">Event Name</InputLabel>
                   <Select

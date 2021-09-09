@@ -202,7 +202,7 @@ const Add_Event = (props) => {
                                                 <Grid item xs={12}>
                                                     <Field as={TextField} fullWidth label='Start Date and Time' name='startTime' value={props.values.startTime}
                                                         id="datetime-local" type="datetime-local" defaultValue="Default Value"
-                                                        defaultValue="2021-08-24T10:30" min="2021-08-24"
+                                                        defaultValue="2021-09-09T11:00" min="2021-08-24"
 
                                                         InputLabelProps={{
                                                             shrink: true,
@@ -214,7 +214,7 @@ const Add_Event = (props) => {
                                                 <Grid item xs={12}>
                                                     <Field as={TextField} fullWidth label='End Date and Time' name='endTime' value={props.values.endTime}
                                                         id="datetime-local" type="datetime-local" defaultValue="Default Value"
-                                                        defaultValue="2021-08-24T10:30" min="today"
+                                                        defaultValue="2021-09-09T11:30" min="today"
                                                         InputLabelProps={{
                                                             shrink: true,
                                                         }}

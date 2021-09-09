@@ -81,7 +81,7 @@ const Leader = () => {
   const [count,setCount]=useState();
   let history = useHistory()
   useEffect(() => {
-    axios.get('http://localhost:8081/account/events/getEventsList/false/Weekend event')
+    axios.get('/account/events/getEventsList/false/Weekend event')
 
       .then(response => {
         console.log(response)
@@ -190,7 +190,7 @@ const Leader = () => {
                 Nominate Volunteers
               </Typography>
               <Box m={3}>
-                <FormControl alignItems="center" variant="outlined">
+                <FormControl alignItems="center">
                   <InputLabel>Event Name</InputLabel>
                   <Select
                     labelId="demo-event-name-label"
