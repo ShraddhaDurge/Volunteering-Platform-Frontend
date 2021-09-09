@@ -102,7 +102,7 @@ const PastEvents = (props) => {
       <Grid container className={classes.root} spacing={3}>
       <Grid item xs={6}>
             <Paper style={{height:'460px', borderRadius:'10px', width:"615px"}} variant="outlined" >
-                <Carousel interval={10000} position="absolute" variant="dark" style={{marginLeft:'5px', marginRight:'5px'}} >
+                <Carousel interval={3000} position="absolute" variant="dark" style={{marginLeft:'5px', marginRight:'5px'}} >
                   {pevent.map((post) => (
                             <Carousel.Item>
                                 <img
